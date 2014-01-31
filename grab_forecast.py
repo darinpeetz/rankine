@@ -3,6 +3,8 @@ import requests
 
 # Load station tags from stdin.
 import sys
+import argparse
+
 stns = []
 locx = []
 locy = []
@@ -16,6 +18,13 @@ for line in sys.stdin:
 # http://www.nws.noaa.gov/mdl/gfslamp/lavlamp.shtml
 
 # Load raw data as HTML string.
+parser=argparse.ArgumentParser(description='''
+Get weather forecasts at station locations.
+Latitude and longitude of NOAA weather stations outputs as text
+Gathered from the NOAA website
+(http://www.nws.noaa.gov/mdl/gfslamp/docs/stations_info.shtml).
+Requires an internet connection.
+    ''')
 r = requests.get('http://www.nws.noaa.gov/mdl/gfslamp/lavlamp.shtml')
 
 #   We have a list of Illinois stations from the sites loaded previously.  We
