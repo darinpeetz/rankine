@@ -25,7 +25,7 @@ Gathered from the NOAA website
 (http://www.nws.noaa.gov/mdl/gfslamp/docs/stations_info.shtml).
 Requires an internet connection.
     ''')
-r = requests.get('http://www.nws.noaa.gov/mdl/gfslamp/lavlamp.shtml')
+r = requests.get('http://www.nws.noaa.gov/mdl/gfslamp/bull/lavlamp.txt')
 
 #   We have a list of Illinois stations from the sites loaded previously.  We
 #   need to load the data for each of those sites and store these data locally.
